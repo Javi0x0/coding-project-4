@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <chrono>
 
 // function to add the elements of two arrays
 void add(int n, float *x, float *y)
@@ -11,6 +12,7 @@ void add(int n, float *x, float *y)
 int main(void)
 {
   int N = 1<<29; // 1M elements
+   int64_t t;
 
   float *x = new float[N];
   float *y = new float[N];
@@ -23,9 +25,11 @@ int main(void)
 
   // Run kernel on 1M elements on the CPU
 
-    std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
-  add(N, x, y);
-   std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolut>
+
+   add(N, x, y);
+
+   std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution>
    std::chrono::duration<double> elapsed = end_time - start_time;
 
     std::cout << " Elapsed time is : " << elapsed.count() << " " << std::endl;
